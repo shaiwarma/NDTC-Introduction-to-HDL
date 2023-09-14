@@ -1,0 +1,29 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY PreMidtermExam IS
+PORT ( S: IN STD_LOGIC;
+		 X1: IN STD_LOGIC;
+		 X2: IN STD_LOGIC;
+		 Y1: IN STD_LOGIC;
+		 Y2: IN STD_LOGIC;
+		 LEDR: OUT STD_LOGIC_VECTOR (4 DOWNTO 0);
+		 Q1: OUT STD_LOGIC;
+		 Q2: OUT STD_LOGIC
+	  );
+	 
+END PreMidtermExam;
+
+ARCHITECTURE Behavior OF PreMidtermExam IS
+BEGIN
+
+LEDR(4) <= S;
+LEDR(3) <= X1;
+LEDR(2) <= X2;
+LEDR(1) <= Y1;
+LEDR(0) <= Y2;
+
+Q1 <= (X1 AND NOT (S)) OR (S AND Y1);
+Q2 <= (X2 AND NOT (S))OR (Y2 AND S);
+
+END Behavior;
