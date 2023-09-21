@@ -1,7 +1,7 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
-ENTITY Lab3 IS
+ENTITY Lab4 IS
 PORT (U: IN STD_lOGIC;
 		S0: IN STD_lOGIC;
 		V: IN STD_lOGIC;
@@ -10,9 +10,9 @@ PORT (U: IN STD_lOGIC;
 		M: OUT STD_lOGIC;
 		LEDR: OUT STD_lOGIC_VECTOR (4 DOWNTO 0)
 		);
-END Lab3;
+END Lab4;
 		
-ARCHITECTURE Behavior OF Lab3 IS
+ARCHITECTURE Behavior OF Lab4 IS
 BEGIN
 
 	LEDR(4) <= S1;
