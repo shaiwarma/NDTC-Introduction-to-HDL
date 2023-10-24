@@ -1,0 +1,29 @@
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+
+ENTITY MidtermExam IS
+Port( A: IN STD_LOGIC;
+		B: IN STD_LOGIC;
+		S: IN STD_LOGIC;
+		Q: OUT STD_LOGIC;
+		LEDR: OUT STD_LOGIC_VECTOR (2 DOWNTO 0)
+);
+END MidtermExam;
+
+ARCHITECTURE Behavior OF MidtermExam IS
+Begin
+
+Q <= 		'0' WHEN (S = '0' AND A ='0' AND B ='0') else
+			'0' WHEN (S = '1' AND A ='0' AND B ='0') else
+			'1' WHEN (S = '0' AND A ='0' AND B ='1') else
+			'0' WHEN (S = '1' AND A ='0' AND B ='1') else
+			'0' WHEN (S = '0' AND A ='1' AND B ='0') else
+			'1' WHEN (S = '1' AND A ='1' AND B ='0') else
+			'1' WHEN (S = '0' AND A ='1' AND B ='1') else
+			'1';
+		LEDR(2) <= S;
+		LEDR(1) <= A;
+		LEDR(0) <= B;
+
+END Behavior; 
+                 
